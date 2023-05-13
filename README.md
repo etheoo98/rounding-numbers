@@ -1,5 +1,5 @@
 # rounding-numbers
-A simple console application made for a beginners programming course.
+A simple console application made for a beginner's programming course.
 
 ## Assignment description
 ### This assignment is about floating point numbers and rounding them off.
