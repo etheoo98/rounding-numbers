@@ -9,7 +9,7 @@ internal class RoundingNumbers
         // Initialize variables
         bool isValidInput;
         double decimalValue = 0;
-        var integerValue = 0;
+        var decimalLength = 0;
         var decimalSeparator = "";
 
         // Loop until valid input is entered
@@ -33,7 +33,7 @@ internal class RoundingNumbers
         // Loop until valid input is entered
         do
         {
-            Console.Write("Enter the number of decimal places to round to (1-15): ");
+            Console.Write("Enter the number of decimal places to round off to (1-15): ");
             var input = Console.ReadLine();
 
             // Validate input using regular expression
@@ -42,10 +42,10 @@ internal class RoundingNumbers
 
             if (isValidInput)
             {
-                integerValue = int.Parse(input!);
+                decimalLength = int.Parse(input!);
 
                 // Ensure input is between 1 and 15
-                if (integerValue > 15)
+                if (decimalLength > 15)
                 {
                     Console.WriteLine("Error: The input must be a whole number between 1 and 15. Please try again.");
                     isValidInput = false;
@@ -54,8 +54,8 @@ internal class RoundingNumbers
         } while (!isValidInput);
 
         // Round the decimal value and convert to a string with the desired number of decimal places
-        var roundedString = Math.Round(decimalValue, integerValue, MidpointRounding.AwayFromZero)
-            .ToString($"F{integerValue}");
+        var roundedString = Math.Round(decimalValue, decimalLength, MidpointRounding.AwayFromZero)
+            .ToString($"F{decimalLength}");
 
         var output = roundedString;
 
